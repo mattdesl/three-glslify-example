@@ -4,7 +4,7 @@
 
 ![screenshot](http://i.imgur.com/Bjr85Gb.jpg)
 
-[(click for demo)](https://github.com/mattdesl/three-glslify-example)
+[(click for demo)](http://mattdesl.github.io/three-glslify-example/)
 
 A simple example of modular shaders in ThreeJS with [glslify](https://github.com/stackgl/glslify). Uses [glsl-halftone](https://github.com/stackgl/glsl-halftone), [glsl-hash-blur](https://github.com/stackgl/glsl-hash-blur), and [glsl-checker](https://github.com/mattdesl/glsl-checker).
 
