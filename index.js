@@ -10,8 +10,7 @@ var app = createOrbitViewer({
   position: new THREE.Vector3(0.85, 1, -1.5)
 })
 
-var tex = THREE.ImageUtils.loadTexture('baboon.png')
-
+var tex = THREE.ImageUtils.loadTexture('baboon.png', undefined, ready)
 var geo = new THREE.BoxGeometry(1, 1, 1)
 var mat = new THREE.ShaderMaterial({
   vertexShader: glslify('./vert.glsl'),
@@ -26,6 +25,7 @@ var mat = new THREE.ShaderMaterial({
 })
 
 var box = new THREE.Mesh(geo, mat)
+box.visible = false
 app.scene.add(box)
 
 box.rotation.y = -Math.PI
@@ -34,3 +34,8 @@ app.on('tick', function(dt) {
   time += dt / 1000
   mat.uniforms.iGlobalTime.value = time
 })
+
+//texture is ready.. show box
+function ready() {
+  box.visible = true
+}
