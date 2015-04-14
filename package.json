@@ -1,0 +1,47 @@
+{
+  "name": "three-glslify-example",
+  "version": "1.0.0",
+  "description": "a simple example of ThreeJS with glslify",
+  "main": "index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Matt DesLauriers",
+    "email": "dave.des@gmail.com",
+    "url": "https://github.com/mattdesl"
+  },
+  "dependencies": {
+    "budo": "^3.0.4",
+    "garnish": "^2.1.3",
+    "glsl-checker": "^1.0.1",
+    "glsl-easings": "^1.0.0",
+    "glsl-halftone": "^1.0.4",
+    "glsl-luma": "^1.0.1",
+    "glslify": "^2.1.1",
+    "three": "^0.70.0",
+    "three-orbit-viewer": "^69.3.0",
+    "watchify": "^3.1.0"
+  },
+  "devDependencies": {
+    "glsl-hash-blur": "^1.0.2"
+  },
+  "scripts": {
+    "start": "budo index:bundle.js --live -v -t glslify --no-debug | garnish"
+  },
+  "keywords": [
+    "glslify",
+    "three",
+    "js",
+    "threejs",
+    "glsl",
+    "glslbin",
+    "stackgl"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mattdesl/three-glslify-example.git"
+  },
+  "homepage": "https://github.com/mattdesl/three-glslify-example",
+  "bugs": {
+    "url": "https://github.com/mattdesl/three-glslify-example/issues"
+  }
+}
