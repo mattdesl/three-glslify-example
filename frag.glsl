@@ -20,7 +20,7 @@ void main() {
   vec3 color = vec3(0.0);
 
   //the checker box
-  if (vNorm.z < 0.5) {
+  if (vNorm.z < 0.4) {
     color = vNorm * 0.5 + 0.5;
     color += vec3(checker(vUv, 15.0)) * 0.05;
   } 
