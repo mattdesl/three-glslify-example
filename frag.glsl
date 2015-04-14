@@ -31,7 +31,6 @@ void main() {
   colorB = mix(colorB, halftone(colorB, vUv, 35.0), falloff);
   
   //mix the two
-    
   float blend = smoothstep(0.0, 0.7, vNorm.z);
   gl_FragColor.rgb = mix(colorA, colorB, blend);
   gl_FragColor.a = 1.0;

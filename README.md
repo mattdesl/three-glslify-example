@@ -2,7 +2,7 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
-![screenshot](http://i.imgur.com/Bjr85Gb.jpg)
+![screenshot](http://i.imgur.com/mu8kbLG.jpg)
 
 [(click for demo)](http://mattdesl.github.io/three-glslify-example/)
 
