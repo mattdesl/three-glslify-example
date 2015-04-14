@@ -17,24 +17,22 @@ vec3 sample(vec2 uv) {
 }
 
 void main() {
-  vec3 color = vec3(0.0);
-
   //the checker box
-  if (vNorm.z < 0.4) {
-    color = vNorm * 0.5 + 0.5;
-    color += vec3(checker(vUv, 15.0)) * 0.05;
-  } 
-  //our texture with halftone + hash blur
-  else {
-    float dist = length(vUv - 0.5);
-    float falloff = smoothstep(0.3, 0.7, dist);
-    float radius = TEXEL_SIZE * 40.0;
-    radius *= falloff;
-    color = blur(vUv, radius, 1.0);
-    falloff = smoothstep(0.5, 0.0, dist);
-    color = mix(color, halftone(color, vUv, 35.0), falloff);
-  }
+  vec3 colorA = vNorm * 0.5 + 0.5;
+  colorA += vec3(checker(vUv, 15.0)) * 0.05;
+
+  //our texture with halftone + hash blur  
+  float dist = length(vUv - 0.5);
+  float falloff = smoothstep(0.3, 0.7, dist);
+  float radius = TEXEL_SIZE * 40.0;
+  radius *= falloff;
+  vec3 colorB = blur(vUv, radius, 1.0);
+  falloff = smoothstep(0.5, 0.0, dist);
+  colorB = mix(colorB, halftone(colorB, vUv, 35.0), falloff);
   
-  gl_FragColor.rgb = color;
+  //mix the two
+    
+  float blend = smoothstep(0.0, 0.7, vNorm.z);
+  gl_FragColor.rgb = mix(colorA, colorB, blend);
   gl_FragColor.a = 1.0;
 }
