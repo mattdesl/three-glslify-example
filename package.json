@@ -13,20 +13,22 @@
     "budo": "^3.0.4",
     "garnish": "^2.1.3",
     "glsl-checker": "^1.0.1",
-    "glsl-easings": "^1.0.0",
     "glsl-halftone": "^1.0.4",
-    "glsl-luma": "^1.0.1",
     "glslify": "^2.1.1",
     "three": "^0.70.0",
     "three-orbit-viewer": "^69.3.0",
-    "watchify": "^3.1.0"
-  },
-  "devDependencies": {
+    "watchify": "^3.1.0",
     "glsl-hash-blur": "^1.0.2"
   },
-  "scripts": {
-    "start": "budo index:bundle.js --live -v -t glslify --no-debug | garnish"
+  "devDependencies": {
+    "browserify": "^9.0.8",
+    "uglify-js": "^2.4.20"
   },
+  "scripts": {
+    "start": "budo index.js:bundle.js --live -v -t glslify --no-debug | garnish",
+    "build": "browserify index.js -t glslify | uglifyjs -cm > bundle.js"
+  },
+  "private": true,
   "keywords": [
     "glslify",
     "three",
