@@ -25,7 +25,7 @@
     "uglify-js": "^2.4.20"
   },
   "scripts": {
-    "start": "budo index.js:bundle.js --live -v -t glslify --no-debug | garnish",
+    "start": "budo index.js:bundle.js --live -v -t glslify | garnish",
     "build": "browserify index.js -t glslify | uglifyjs -cm > bundle.js"
   },
   "private": true,
