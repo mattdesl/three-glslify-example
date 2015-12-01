@@ -32,7 +32,7 @@ npm run build
 
 This will create a `bundle.js` for your static site.
 
-See the `scripts` field of [package.json](package.json) to integrate this into your own workflow.
+See the `scripts` field of [package.json](package.json) to integrate this into your own workflow. This is also specifying browserify transforms with a `"browserify"` field (not recommended for modules, but useful for applications), and Babelify configuration with a [.babelrc](./.babelrc) file.
 
 ## License
 
