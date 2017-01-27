@@ -10,25 +10,22 @@
     "url": "https://github.com/mattdesl"
   },
   "dependencies": {
-    "garnish": "^3.2.0",
     "glsl-checker": "^1.0.1",
     "glsl-halftone": "^1.0.4",
     "glsl-hash-blur": "^1.0.2",
-    "glslify": "^2.1.1",
-    "three": "^0.70.0",
-    "three-orbit-viewer": "^69.3.0"
+    "three": "^0.84.0",
+    "three-orbit-viewer": "^69.3.1"
   },
   "devDependencies": {
-    "babel-preset-es2015": "^6.1.18",
-    "babelify": "^7.2.0",
-    "browserify": "^11.1.0",
-    "budo": "^5.1.5",
-    "garnish": "^3.2.1",
-    "glslify": "^2.3.1",
-    "uglify-js": "^2.4.21"
+    "babel-preset-es2015": "^6.22.0",
+    "babelify": "^7.3.0",
+    "browserify": "^14.0.0",
+    "budo": "^9.4.5",
+    "glslify": "^6.0.1",
+    "uglify-js": "^2.7.5"
   },
   "scripts": {
-    "start": "budo index.js:bundle.js --live | garnish",
+    "start": "budo index.js:bundle.js --live",
     "build": "browserify index.js | uglifyjs -cm > bundle.js"
   },
   "private": true,
@@ -43,7 +40,8 @@
   ],
   "browserify": {
     "transform": [
-      "babelify", "glslify"
+      "babelify",
+      "glslify"
     ]
   },
   "repository": {
